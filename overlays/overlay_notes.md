@@ -1,5 +1,11 @@
 # Overlay construction notes (the only hand-curated input)
 
+These CSVs are short country-year lists compiled for this paper. They are
+not a redistribution of the Reinhart–Rogoff source files or of IMF MONA.
+Cite Reinhart and Rogoff (2009) for default years and the IMF for program
+years. JST microdata is not in this repository; see `data/README.md` and
+the CC terms at https://www.macrohistory.net/database/.
+
 Country names are spelled exactly as in JST R6: Australia, Belgium,
 Canada, Denmark, Finland, France, Germany, Ireland, Italy, Japan,
 Netherlands, Norway, Portugal, Spain, Sweden, Switzerland, UK, USA.

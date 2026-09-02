@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: "Can Sovereign Debt Early-Warning Dashboards Be Validated? Evidence from a Declared Walk-Forward"
+message: "If you use this repository or paper, please cite it as below."
+type: software
+authors:
+  - family-names: Erickson
+    given-names: Michael A.
+    email: mxerickson.tms@gmail.com
+repository-code: "https://github.com/MadMoDiesel/sovereign-debt-ews"
+date-released: "2026-09-02"
+license: MIT
+keywords:
+  - sovereign debt
+  - early warning
+  - walk-forward
+  - rare events
+preferred-citation:
+  type: article
+  title: "Can Sovereign Debt Early-Warning Dashboards Be Validated? Evidence from a Declared Walk-Forward"
+  authors:
+    - family-names: Erickson
+      given-names: Michael A.
+  year: 2026
+  notes: "Working paper"

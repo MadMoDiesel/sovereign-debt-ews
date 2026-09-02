@@ -1,4 +1,4 @@
-# Can Sovereign Debt Early-Warning Dashboards Be Validated? Evidence from a Pre-Registered Walk-Forward
+# Can Sovereign Debt Early-Warning Dashboards Be Validated? Evidence from a Declared Walk-Forward
 
 Michael A. Erickson  
 Independent  
@@ -11,7 +11,7 @@ Working paper. Comments welcome.
 Companion code and locked result files: https://github.com/MadMoDiesel/sovereign-debt-ews
 
 JEL: C52, C53, E62, F34, G01, H63  
-Keywords: early warning, sovereign debt, walk-forward validation, pre-registration, rare events, Jordà–Schularick–Taylor
+Keywords: early warning, sovereign debt, walk-forward validation, declared design, rare events, Jordà–Schularick–Taylor
 
 ---
 
@@ -31,7 +31,7 @@ The answer we find is that on the advanced-economy long panel, the question cann
 
 Three features distinguish this exercise from the adjacent literature. First, events are defined mechanically from rules declared before any indicator was constructed, eliminating the discretion in hand-labeled crisis chronologies. Second, a confirmation gate — enforced in the data layer and unit-tested — prevents the subtle leak that a training label whose outcome window has not yet closed carries information from the future; the gate applies to negative labels as well as positive ones, a leak most early-warning studies carry silently. Third, and centrally, the sequence of analytic decisions was locked in a declared order, and the paper reports that timeline as an exhibit (Section 5), including the decisions refused after results were visible. A null result is only worth reporting if the reader can verify it was not one specification choice away from a positive; the timeline is that verification.
 
-The contribution is therefore twofold: a specific empirical finding — the advanced-economy panel cannot support out-of-sample validation of multi-indicator sovereign early warning — and a demonstration of the pre-registration machinery that licenses stating a null that way.
+The contribution is therefore twofold: a specific empirical finding — the advanced-economy panel cannot support out-of-sample validation of multi-indicator sovereign early warning — and a demonstration of a dated decision timeline that licenses stating a null that way.
 
 ## 2. Relation to existing work
 
@@ -45,7 +45,7 @@ We do not claim these literatures are wrong. We claim that the specific composit
 
 **Event rules.** A country-year *t* is a disorderly-adjustment onset if any of four conditions begins at *t*, having not fired at *t−1*, outside a five-year post-onset exclusion window: (D1) sovereign default or restructuring per the Reinhart-Rogoff chronology; (D2) CPI inflation of at least 20% with debt/GDP of at least 60% at *t−1*; (D3) real government bond total return of −15% or worse with the same debt gate; (D4) an IMF program with fiscal conditionality, post-1945. The debt gate implements a non-event rule stated in advance: inflation or bond losses without debt context — wartime inflation in a low-debt country, a pure monetary event — must not count. Banking crises resolved without sovereign stress do not count; the 2008 United States is a banking crisis, not a disorderly sovereign adjustment, and a labeler that conflates them learns the wrong object. Exclusion-window years are removed from the risk set entirely rather than treated as clean negatives.
 
-Threshold sensitivity was pre-registered as a grid (inflation {15, 20, 25}%; debt gate {50, 60, 75}%; real return {−10, −15, −20}%). Onset counts across the 27 cells range from 19 to 58, with 34 at the declared defaults (Table B2).
+Threshold sensitivity was declared as a grid (inflation {15, 20, 25}%; debt gate {50, 60, 75}%; real return {−10, −15, −20}%). Onset counts across the 27 cells range from 19 to 58, with 34 at the declared defaults (Table B2).
 
 **The resulting sample.** Thirty-four onsets over 2,548 risk-set country-years: an annual incidence of 1.33% (Table B1). Ten onsets fall after 1950: Netherlands 1951 and 1957 (D3), United Kingdom 1973 (D3), Italy 1974 (D4), Portugal 1977, 1983 and 2011 (D4 / D4 / D3+D4), Spain 1978 (D4), Ireland 1981 (D2) and 2010 (D4). Table B0 maps each of those ten to its three lead years. Seven are scoreable under tiling (UK 1973, Italy 1974, Portugal 1977, Spain 1978, Ireland 1981, Ireland 2010, Portugal 2011). Two are structurally unscoreable: Portugal 1983 and Netherlands 1957 fall six years after a prior onset in the same country, so every lead year s ∈ {t−1, t−2, t−3} sits inside the previous five-year exclusion window. Netherlands 1951 has one complete-case lead year (1950) that is neither trainable under the T=1950 confirmation gate nor inside any test window. The declared grid scores four of the seven (eight lead rows). The numbers that bind the paper are 1.33%, ten post-1950 onsets, and seven that a walk-forward can see.
 
@@ -57,9 +57,9 @@ Thirteen indicators were declared before estimation and none added after: public
 
 Two construction caveats are material and disclosed rather than buried. JST contains no interest-expense series, so debt service over revenue is a proxy — debt × long rate over revenue — which is a transform of variables already in the set and is therefore partly collinear with the univariate benchmark; the primary balance inherits the same proxy. Nominal GDP growth for r−g is constructed as real growth compounded with inflation rather than from the nominal GDP series, whose wartime currency rebasements would otherwise poison the panel's most important variable. The credit gap uses a trailing mean rather than the two-sided HP filter common in this literature, which embeds look-ahead.
 
-Complete-case coverage is 72.2% of country-years and is not random: it thins precisely in wars and the early period, where events concentrate (Table B3). A reduced eleven-indicator specification (R1, dropping the two thinnest series on the risk set, `credit_gap_5y` and `d_debt_gdp_3y`) was pre-registered as the corresponding robustness check. Credit-gap windows {5, 7, 10} were built at the same time; the primary remains 5.
+Complete-case coverage is 72.2% of country-years and is not random: it thins precisely in wars and the early period, where events concentrate (Table B3). A reduced eleven-indicator specification (R1, dropping the two thinnest series on the risk set, `credit_gap_5y` and `d_debt_gdp_3y`) was declared as the corresponding robustness check. Credit-gap windows {5, 7, 10} were built at the same time; the primary remains 5.
 
-## 5. The pre-registration timeline
+## 5. The decision timeline
 
 This section is the paper's central exhibit. The claim "the comparison is not identified" is only credible if the reader can verify that the design was not adjusted toward that conclusion — or away from it — after results were visible. The timeline separates decisions into three phases by what was known when each was locked.
 
@@ -71,7 +71,7 @@ This section is the paper's central exhibit. The claim "the comparison is not id
 
 **Post-hoc onset-year drop, run and declined.** After all declared scores were visible, and prompted by review, onset years were removed from the risk set (Bussière and Fratzscher 2006). The change flattered M1 (live-window 0.59 → 0.64) and was not adopted. Primary results keep onset years in. Un-run refusals are a claim; a run that helped the multi-indicator model and was declined is evidence.
 
-No OSF or AEA registry entry exists. “Locked” means dated in the companion repository before the next step was run.
+No OSF or AEA registry entry exists. The ordering of decisions is documented in `debt_ews_research_design.md` and in the dated notes under `results/`. It is not independently timestamped commit-by-commit: the public repository was snapshotted after the analysis. The first third-party timestamps will be the preprint submission and any later archive deposit.
 
 **Phase 3 — refused after results were visible.** Widening test windows further; switching the outcome to onset-at-*s*; adding indicators; selecting between E0 and E1, or between the original and tiling grids, on the basis of which produced a better score; treating any sub-comparison that favored the multi-indicator model as a finding; adopting the onset-year drop after it raised M1.
 
@@ -93,7 +93,7 @@ Ten onsets fall after 1950. Table B0 shows what the walk-forward can see. Seven 
 
 Fold-level AUCs are descriptive (Table B4). On the common-row set, declared grid, pooled M1 is 0.31 and M2 is 0.59; in the one live window (four onsets, eight lead rows) they are 0.59 and 0.83. Under tiling, pooled 0.44 versus 0.61 on the same common rows. Per-window signs flip.
 
-Dropping onset years from train and test moves live-window M1 from 0.59 to 0.64 and tiling pooled M1 from 0.44 to 0.48; M2 does not move. Removing k negatives from a test set of N negatives can shift AUC by at most AUC·k/(N−k). The 1971–75 window has two onset-year rows among ~74 common-row negatives (bound ≈ 0.02); tiling pooled has ten among ~1,030 (bound ≈ 0.004). Holding the declared fit and dropping those rows only at evaluation moves live-window M1 by 0.01. The remaining lift is in M1's fitted coefficients — the same fragility as R1 (0.59 → 0.85 from dropping two indicators). It is not a bias correction that creates power. Primary results keep the declared risk set.
+Dropping onset years from train and test moves live-window M1 from 0.59 to 0.64 and tiling pooled M1 from 0.44 to 0.48; M2 on the same rows is 0.83 before the drop and 0.84 after it. Removing k negatives from a test set of N negatives can shift AUC by at most AUC·k/(N−k). The 1971–75 window has two onset-year rows among ~74 common-row negatives (bound ≈ 0.02); tiling pooled has ten among ~1,030 (bound ≈ 0.004). Holding the declared fit and dropping those rows only at evaluation moves live-window M1 by 0.01. The remaining lift is in M1's fitted coefficients — the same fragility as R1 (0.59 → 0.85 from dropping two indicators). It is not a bias correction that creates power. Primary results keep the declared risk set.
 
 **What is identified.** Incidence 1.33%; ten post-1950 onsets; seven scoreable; threshold-sweep counts 19–58. Properties of the panel.
 
@@ -111,7 +111,7 @@ Three routes to statistical power exist, and each changes the object of study ra
 
 ## 9. Conclusion
 
-On a pre-registered walk-forward over the long advanced-economy panel, multi-indicator sovereign debt early warning cannot be validated out of sample: the events are too rare to discriminate a thirteen-indicator model from debt/GDP alone, under either the declared or the coverage-corrected fold design, and this rarity is a property of the phenomenon rather than of the dataset. Dashboards addressed to US-like sovereigns therefore rest, and must rest, on theory and judgment rather than measured early-warning validity — a fact their presentation should reflect. The machinery built here — mechanical event labeling, an enforced and unit-tested confirmation gate, and a decision timeline that distinguishes what was fixed before evidence from what was refused after — is reusable on any panel that has events, and we intend to apply it, under a fresh registration, to the emerging-market record, where the interesting question is not whether early warning works but whether anything learned there transfers to the sovereigns the dashboards are actually about.
+On a declared walk-forward over the long advanced-economy panel, multi-indicator sovereign debt early warning cannot be validated out of sample: the events are too rare to discriminate a thirteen-indicator model from debt/GDP alone, under either the declared or the coverage-corrected fold design, and this rarity is a property of the phenomenon rather than of the dataset. Dashboards addressed to US-like sovereigns therefore rest, and must rest, on theory and judgment rather than measured early-warning validity — a fact their presentation should reflect. The machinery built here — mechanical event labeling, an enforced and unit-tested confirmation gate, and a decision timeline that distinguishes what was fixed before evidence from what was refused after — is reusable on any panel that has events, and we intend to apply it, under a separately dated design, to the emerging-market record, where the interesting question is not whether early warning works but whether anything learned there transfers to the sovereigns the dashboards are actually about.
 
 ## Acknowledgements
 
@@ -328,13 +328,13 @@ Pooled closed OOS, original grid, common rows:
 | full | 2006–10 | M1 | 6 | 0.69 | 0.060 |
 | full | 2006–10 | M2 on M1 rows | 6 | 0.78 | 0.056 |
 | R1 | 1966–70 | M1 | 1 | 0.63 | 0.012 |
-| R1 | 1966–70 | M2 | 1 | 0.91 | 0.011 |
+| R1 | 1966–70 | M2 on M1 rows | 1 | 0.90 | 0.011 |
 | R1 | 1971–75 | M1 | 8 | 0.85 | 0.093 |
-| R1 | 1971–75 | M2 | 8 | 0.87 | 0.088 |
+| R1 | 1971–75 | M2 on M1 rows | 8 | 0.89 | 0.093 |
 | R1 | 1976–80 | M1 | 6 | 0.77 | 0.076 |
-| R1 | 1976–80 | M2 | 6 | 0.53 | 0.076 |
+| R1 | 1976–80 | M2 on M1 rows | 6 | 0.55 | 0.081 |
 | R1 | 2006–10 | M1 | 6 | 0.80 | 0.051 |
-| R1 | 2006–10 | M2 | 6 | 0.78 | 0.053 |
+| R1 | 2006–10 | M2 on M1 rows | 6 | 0.79 | 0.056 |
 
 Pooled closed OOS, tiling grid, common rows:
 
@@ -345,7 +345,7 @@ Pooled closed OOS, tiling grid, common rows:
 | R1 | M1 | 1066 | 21 | 0.59 | 0.026 |
 | R1 | M2 on M1 rows | 1066 | 21 | 0.63 | 0.023 |
 
-Onset-year drop (full spec; post-hoc, not adopted). Declared fit, onset years dropped only at evaluation: live-window M1 0.60. Train and test both dropped: live-window M1 0.64 / M2 0.80 on M2's own rows; tiling pooled M1 0.48. Test-side bound on the live window ≈ 0.02. Same four live-window onsets. Same power bound.
+Onset-year drop (full spec; post-hoc, not adopted). Declared fit, onset years dropped only at evaluation: live-window M1 0.60. Train and test both dropped, common rows: live-window M1 0.64 / M2 0.84; tiling pooled M1 0.48. M2 is 0.83 on the declared live window and 0.84 after the drop. Test-side bound on the live window ≈ 0.02. Same four live-window onsets. Same power bound.
 
 ### Table B5. Wartime debt-gap fill (E0 continuation)
 
