@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+data/JSTdatasetR6.dta
+data/JSTdatasetR6.xlsx
+data/*.dta
+data/*.xlsx
+*.log
+*.aux
+*.out
+archive_reconstruction/
