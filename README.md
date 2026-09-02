@@ -22,6 +22,7 @@ Design lock: [`debt_ews_research_design.md`](debt_ews_research_design.md)
 | `debt_labels.py` | Mechanical D1–D4 onset labeler (E0/E1 continuation) |
 | `debt_indicators.py` | Thirteen look-ahead-safe indicators |
 | `debt_walkforward.py` | Expanding-window engine, confirmation gate, both fold grids |
+| `power_n.py` | Hanley–McNeil SE and n1 needed to detect a 0.10 / 0.05 AUC gap |
 | `test_debt_*.py` | Unit tests for labels, indicators, outcome/gate |
 | `overlays/` | Reinhart–Rogoff default years and IMF-program years |
 | `results/` | Locked label sets, coverage, walk-forward scores, pre-reg notes, paper |
@@ -35,6 +36,7 @@ JST is not included. See `data/README.md`.
 python3 -m pip install -r requirements.txt
 # download JSTdatasetR6.dta into data/
 python3 -m pytest test_debt_labels.py test_debt_indicators.py test_debt_walkforward.py -q
+python3 power_n.py
 python3 run_step1.py
 python3 run_step2.py
 python3 run_step3.py

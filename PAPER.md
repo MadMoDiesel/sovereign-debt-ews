@@ -17,7 +17,7 @@ Keywords: early warning, sovereign debt, walk-forward validation, pre-registrati
 
 ## Abstract
 
-Sovereign debt "dashboards" — indicator panels that color a country's fiscal position green, yellow, or red — implicitly claim that combinations of fiscal, monetary, and external gauges provide early warning of disorderly debt adjustment. We test whether that claim can be validated on the evidence base it invokes: the long-run advanced-economy panel. Using the Jordà–Schularick–Taylor Macrohistory Database, Release 6 (18 countries, 1870–2020; Jordà, Schularick, and Taylor 2017), we define disorderly-adjustment onsets mechanically from pre-registered rules, construct thirteen pre-registered indicators under an enforced look-ahead gate, and run an expanding-window walk-forward comparing a multi-indicator model against debt/GDP alone. The design identifies 34 onsets over 2,548 risk-set country-years (1.33% annual incidence), of which ten fall after 1950. The walk-forward can score seven of those ten: the declared eight-fold grid sees four onsets (eight lead rows in one window); a post-hoc tiling of test windows, reported alongside the registered grid, sees seven onsets (21 lead rows in four windows). Two onsets are invisible by construction — a repeat six years after a prior onset has every three-year lead row inside the previous exclusion window — and one sits in a fold-boundary gap. A 0.10 AUC gap between a 13-indicator model and debt/GDP alone would want on the order of 50–100 independent positives at conventional power; the post-1950 record contains ten. That counting argument, not the fold-level AUCs, is the result. Advanced-economy disorderly adjustments are too rare for multi-indicator early-warning claims to be validated out of sample on the panel such dashboards implicitly cite. The pre-registration timeline — what was fixed, when, and what was refused after results were visible — is presented as a central exhibit, because the finding is only as strong as the discipline that produced it.
+Sovereign debt "dashboards" — indicator panels that color a country's fiscal position green, yellow, or red — implicitly claim that combinations of fiscal, monetary, and external gauges provide early warning of disorderly debt adjustment. We test whether that claim can be validated on the evidence base it invokes: the long-run advanced-economy panel. Using the Jordà–Schularick–Taylor Macrohistory Database, Release 6 (18 countries, 1870–2020; Jordà, Schularick, and Taylor 2017), we define disorderly-adjustment onsets mechanically from declared rules, construct thirteen declared indicators under an enforced look-ahead gate, and run an expanding-window walk-forward comparing a multi-indicator model against debt/GDP alone. The design identifies 34 onsets over 2,548 risk-set country-years (1.33% annual incidence), of which ten fall after 1950. The walk-forward can score seven of those ten: the declared eight-fold grid sees four onsets (eight lead rows in one window); a post-hoc tiling of test windows, reported alongside the declared grid, sees seven onsets (21 lead rows in four windows). Two onsets are invisible by construction — a repeat six years after a prior onset has every three-year lead row inside the previous exclusion window — and one sits in a fold-boundary gap. A 0.10 AUC gap would want about 45–110 independent positives (Hanley and McNeil 1982; 80% power, two-sided 5%, score correlation 0.3–0.7); the post-1950 record contains ten. Advanced-economy disorderly adjustments are too rare for multi-indicator early-warning claims to be validated out of sample on the panel such dashboards implicitly cite. The decision timeline — what was locked, when, and what was refused after results were visible — is a central exhibit, because the finding is only as strong as the discipline that produced it.
 
 ---
 
@@ -67,9 +67,13 @@ This section is the paper's central exhibit. The claim "the comparison is not id
 
 **Phase 2 — locked after labels and indicators existed, before any model was fit.** The E0/E1 continuation codings, prompted by inspection of the France 1937–48 spell during the wartime sensitivity. The R1 reduced-indicator specification and the credit-gap window sweep {5, 7, 10}, prompted by the coverage maps.
 
-**Post-hoc coverage correction, not a Phase-2 lock.** After the original eight-fold grid had been run and its AUCs seen, test windows were re-cut so that T steps of five years tile 1951–2020. The rationale is coverage: the registered grid discards half the post-1950 years by construction, including the lead years on Ireland 2010 and Portugal 2011. That rationale does not depend on the AUCs, but “not treated as informative” is unverifiable. The tiling grid is reported alongside the registered grid. It is not a replacement, and it is not pre-registered.
+**Post-hoc coverage correction, not a Phase-2 lock.** After the original eight-fold grid had been run and its AUCs seen, test windows were re-cut so that T steps of five years tile 1951–2020. The rationale is coverage: the declared grid discards half the post-1950 years by construction, including the lead years on Ireland 2010 and Portugal 2011. That rationale does not depend on the AUCs, but “not treated as informative” is unverifiable. The tiling grid is reported alongside the declared grid. It is not a replacement, and it was not locked before scores existed.
 
-**Phase 3 — refused after results were visible.** Widening test windows further; switching the outcome to onset-at-*s*; adding indicators; selecting between E0 and E1, or between the original and tiling grids, on the basis of which produced a better score; treating any sub-comparison that favored the multi-indicator model as a finding.
+**Post-hoc onset-year drop, run and declined.** After all declared scores were visible, and prompted by review, onset years were removed from the risk set (Bussière and Fratzscher 2006). The change flattered M1 (live-window 0.59 → 0.64) and was not adopted. Primary results keep onset years in. Un-run refusals are a claim; a run that helped the multi-indicator model and was declined is evidence.
+
+No OSF or AEA registry entry exists. “Locked” means dated in the companion repository before the next step was run.
+
+**Phase 3 — refused after results were visible.** Widening test windows further; switching the outcome to onset-at-*s*; adding indicators; selecting between E0 and E1, or between the original and tiling grids, on the basis of which produced a better score; treating any sub-comparison that favored the multi-indicator model as a finding; adopting the onset-year drop after it raised M1.
 
 ## 6. Walk-forward design
 
@@ -77,7 +81,7 @@ The engine is an expanding-window walk-forward. For each fold with training boun
 
 The outcome is forward: y = 1 iff an onset occurs in (*s*, *s*+3]. Combined with a five-year exclusion window, a repeat onset at t+6 has every lead row inside the previous exclusion window and contributes zero positives by construction (Portugal 1983, Netherlands 1957; before 1950, Portugal 1922).
 
-The onset year itself is a mechanical negative: t+1…t+5 are excluded, so y(t)=0 while inflation and real returns are at their sample extremes. Those rows stay in the primary risk set because that is what was declared. A sensitivity drops them (Bussière and Fratzscher 2006). It does not change the scoreable-onset count or the power conclusion (Appendix B4).
+The onset year itself is a mechanical negative: t+1…t+5 are excluded, so y(t)=0 while inflation and real returns are at their sample extremes. Those rows stay in the primary risk set because that is what was declared. The post-hoc drop described in Section 5 was run after scores were visible, flattered M1, and was not adopted (Appendix B4).
 
 M1 requires the full indicator vector; M2 requires only debt/GDP. Reported horse-race numbers below are restricted to the intersection — the M1 complete-case rows — so the two models are scored on the same country-years.
 
@@ -85,9 +89,11 @@ M1 requires the full indicator vector; M2 requires only debt/GDP. Reported horse
 
 The result is a counting argument.
 
-Ten onsets fall after 1950. Table B0 shows what the walk-forward can see. Seven produce any complete-case lead row outside an exclusion window. Those seven contribute 21 tiling test positives — three near-duplicate lead years each, not 21 independent events — in two waves (1970s European inflation/IMF; 2010–11 periphery). The registered grid, eight folds, scores four of the seven (eight lead rows) in a single window. Hanley–McNeil standard error on an AUC near 0.6 with seven independent positives and ~1,000 negatives is about 0.11. Detecting a 0.10 gap between two paired models at 80% power wants roughly 50–100 independent positives; a 0.05 gap wants several hundred. The post-1950 advanced-economy record contains ten onsets. That bound does not depend on M1 or M2. It binds every study on this panel.
+Ten onsets fall after 1950. Table B0 shows what the walk-forward can see. Seven produce any complete-case lead row outside an exclusion window. Those seven contribute 21 tiling test positives — three near-duplicate lead years each, not 21 independent events — in two waves (1970s European inflation/IMF; 2010–11 periphery). The declared grid, eight folds, scores four of the seven (eight lead rows) in a single window. Hanley and McNeil (1982) standard error on an AUC near 0.6 is about 0.15 with four independent positives (the live window) and about 0.11 with seven (tiling, treating each onset as one draw) and ~1,000 negatives. Detecting a 0.10 gap between two paired models at 80% power, two-sided 5%, wants about 45–110 independent positives as the score correlation ranges from 0.7 to 0.3 (`power_n.py` in the repository); a 0.05 gap wants several hundred. The post-1950 advanced-economy record contains ten onsets. That bound does not depend on M1 or M2. It binds every study on this panel.
 
-Fold-level AUCs are descriptive (Table B4). On the common-row set, registered grid, pooled M1 is 0.31 and M2 is 0.59; in the one live window they are 0.59 and 0.83. Under tiling, pooled 0.44 versus 0.61. Per-window signs flip. Dropping onset years from the risk set moves live-window M1 from 0.59 to 0.64 and leaves tiling pooled M1 at 0.48. None of these gaps is estimable at the available n.
+Fold-level AUCs are descriptive (Table B4). On the common-row set, declared grid, pooled M1 is 0.31 and M2 is 0.59; in the one live window (four onsets, eight lead rows) they are 0.59 and 0.83. Under tiling, pooled 0.44 versus 0.61 on the same common rows. Per-window signs flip.
+
+Dropping onset years from train and test moves live-window M1 from 0.59 to 0.64 and tiling pooled M1 from 0.44 to 0.48; M2 does not move. Removing k negatives from a test set of N negatives can shift AUC by at most AUC·k/(N−k). The 1971–75 window has two onset-year rows among ~74 common-row negatives (bound ≈ 0.02); tiling pooled has ten among ~1,030 (bound ≈ 0.004). Holding the declared fit and dropping those rows only at evaluation moves live-window M1 by 0.01. The remaining lift is in M1's fitted coefficients — the same fragility as R1 (0.59 → 0.85 from dropping two indicators). It is not a bias correction that creates power. Primary results keep the declared risk set.
 
 **What is identified.** Incidence 1.33%; ten post-1950 onsets; seven scoreable; threshold-sweep counts 19–58. Properties of the panel.
 
@@ -120,6 +126,8 @@ Blanchard, Olivier. 2019. "Public Debt and Low Interest Rates." *American Econom
 Bussière, Matthieu, and Marcel Fratzscher. 2006. "Towards a New Early Warning System of Financial Crises." *Journal of International Money and Finance* 25 (6): 953–973.
 
 Frankel, Jeffrey A., and Andrew K. Rose. 1996. "Currency Crashes in Emerging Markets: An Empirical Treatment." *Journal of International Economics* 41 (3–4): 351–366.
+
+Hanley, James A., and Barbara J. McNeil. 1982. "The Meaning and Use of the Area under a Receiver Operating Characteristic (ROC) Curve." *Radiology* 143 (1): 29–36.
 
 Jordà, Òscar, Katharina Knoll, Dmitry Kuvshinov, Moritz Schularick, and Alan M. Taylor. 2019. "The Rate of Return on Everything, 1870–2015." *Quarterly Journal of Economics* 134 (3): 1225–1298.
 
@@ -201,7 +209,7 @@ Scoreable onsets: 7. Tiling lead rows scored: 21. Original lead rows scored: 8 (
 
 N = 34. Risk set = 2,548 country-years after dropping exclusion-window rows. Incidence = 1.33%. Post-1950 = 10. Scoreable by the walk-forward = 7 (Table B0).
 
-### Table B2. Pre-registered threshold sweep (onset counts)
+### Table B2. Declared threshold sweep (onset counts)
 
 Inflation ∈ {15, 20, 25}%, debt gate ∈ {50, 60, 75}%, real bond TR ∈ {−10, −15, −20}%.
 
@@ -239,7 +247,7 @@ Range 19–58. Default cell in bold.
 
 ### Table B3. Indicator coverage
 
-Panel: 2,718 country-years. Complete-case (all 14 columns): 1,962 rows, 72.2%.
+Panel: 2,718 country-years. Complete-case on the thirteen declared indicators (inflation enters as the level and as its three-year change): 1,962 rows, 72.2%.
 
 Mean non-null share by indicator:
 
@@ -312,13 +320,13 @@ Pooled closed OOS, original grid, common rows:
 | spec | test | model | pos | AUC | Brier |
 |---|---|---|---:|---:|---:|
 | full | 1966–70 | M1 | 1 | 0.48 | 0.020 |
-| full | 1966–70 | M2 | 1 | 0.82 | 0.011 |
+| full | 1966–70 | M2 on M1 rows | 1 | 0.81 | 0.011 |
 | full | 1971–75 | M1 | 8 | 0.59 | 0.107 |
-| full | 1971–75 | M2 | 8 | 0.80 | 0.088 |
+| full | 1971–75 | M2 on M1 rows | 8 | 0.83 | 0.093 |
 | full | 1976–80 | M1 | 6 | 0.55 | 0.090 |
-| full | 1976–80 | M2 | 6 | 0.50 | 0.077 |
+| full | 1976–80 | M2 on M1 rows | 6 | 0.53 | 0.077 |
 | full | 2006–10 | M1 | 6 | 0.69 | 0.060 |
-| full | 2006–10 | M2 | 6 | 0.77 | 0.056 |
+| full | 2006–10 | M2 on M1 rows | 6 | 0.78 | 0.056 |
 | R1 | 1966–70 | M1 | 1 | 0.63 | 0.012 |
 | R1 | 1966–70 | M2 | 1 | 0.91 | 0.011 |
 | R1 | 1971–75 | M1 | 8 | 0.85 | 0.093 |
@@ -337,7 +345,7 @@ Pooled closed OOS, tiling grid, common rows:
 | R1 | M1 | 1066 | 21 | 0.59 | 0.026 |
 | R1 | M2 on M1 rows | 1066 | 21 | 0.63 | 0.023 |
 
-Drop-onset-year sensitivity (onset years removed from the risk set; full spec): original live-window M1 0.64 / M2 0.80; tiling pooled M1 0.48 / M2 0.59. Same seven onsets. Same power bound.
+Onset-year drop (full spec; post-hoc, not adopted). Declared fit, onset years dropped only at evaluation: live-window M1 0.60. Train and test both dropped: live-window M1 0.64 / M2 0.80 on M2's own rows; tiling pooled M1 0.48. Test-side bound on the live window ≈ 0.02. Same four live-window onsets. Same power bound.
 
 ### Table B5. Wartime debt-gap fill (E0 continuation)
 
