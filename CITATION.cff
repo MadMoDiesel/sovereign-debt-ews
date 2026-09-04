@@ -6,8 +6,13 @@ authors:
   - family-names: Erickson
     given-names: Michael A.
     email: mxerickson.tms@gmail.com
+    orcid: "https://orcid.org/0009-0001-4669-4939"
 repository-code: "https://github.com/MadMoDiesel/sovereign-debt-ews"
-date-released: "2026-09-02"
+url: "https://doi.org/10.5281/zenodo.22304237"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22304237
+date-released: "2026-09-04"
 license: MIT
 keywords:
   - sovereign debt
@@ -20,5 +25,7 @@ preferred-citation:
   authors:
     - family-names: Erickson
       given-names: Michael A.
+      orcid: "https://orcid.org/0009-0001-4669-4939"
   year: 2026
-  notes: "Working paper"
+  doi: 10.5281/zenodo.22304237
+  notes: "Working paper. GitHub tag v1.0-preprint."

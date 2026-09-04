@@ -3,12 +3,15 @@
 Michael A. Erickson  
 Independent  
 Ballston Spa, NY  
-mxerickson.tms@gmail.com
+mxerickson.tms@gmail.com  
+ORCID: 0009-0001-4669-4939
 
 September 2026  
 Working paper. Comments welcome.
 
-Companion code and locked result files: https://github.com/MadMoDiesel/sovereign-debt-ews
+Companion repository: https://github.com/MadMoDiesel/sovereign-debt-ews  
+Replication package: https://doi.org/10.5281/zenodo.22304237  
+GitHub tag: `v1.0-preprint`
 
 JEL: C52, C53, E62, F34, G01, H63  
 Keywords: early warning, sovereign debt, walk-forward validation, declared design, rare events, Jordà–Schularick–Taylor
@@ -145,7 +148,7 @@ Schularick, Moritz, and Alan M. Taylor. 2012. "Credit Booms Gone Bust: Monetary 
 
 ## Appendix A — Reproducibility
 
-Label pipeline (`debt_labels.py`), indicator construction (`debt_indicators.py`), walk-forward engine (`debt_walkforward.py`), and their unit-test suites accompany the paper, together with the label sets under both continuation codings, the threshold-sweep table, coverage matrices, and per-fold predictions. The companion repository is linked on the title page.
+Label pipeline (`debt_labels.py`), indicator construction (`debt_indicators.py`), walk-forward engine (`debt_walkforward.py`), and their unit-test suites accompany the paper, together with the label sets under both continuation codings, the threshold-sweep table, coverage matrices, and per-fold predictions. The companion repository is https://github.com/MadMoDiesel/sovereign-debt-ews (tag `v1.0-preprint`). The archived snapshot is https://doi.org/10.5281/zenodo.22304237.
 
 ## Appendix B — Tables
 
