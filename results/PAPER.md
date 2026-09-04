@@ -297,7 +297,7 @@ Ireland is the thin country (59% overall; complete-case starts 1946). Canada’s
 
 Descriptive only. Horse-race rows use the M1 complete-case intersection so M1 and M2 share country-years. AUC undefined when test positives = 0. Original grid: 8 folds. Tiling grid: 14 folds.
 
-**Original grid** (registered). One live window, four onsets, eight lead rows.
+**Original grid** (declared). One live window, four onsets, eight lead rows.
 
 | spec | test | model | pos | AUC | Brier |
 |---|---|---|---:|---:|---:|

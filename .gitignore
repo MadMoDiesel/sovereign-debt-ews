@@ -11,4 +11,4 @@ data/*.xlsx
 *.aux
 *.out
 archive_reconstruction/
-.DS_Store
+paper.html

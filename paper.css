@@ -1,0 +1,75 @@
+/* Print stylesheet for PAPER.md -> paper.html -> PDF (headless Chromium).
+   Design goals: no overflow wrappers (nothing scrolls, nothing clips),
+   tables never split mid-row, table headers repeat across pages,
+   headings stay with what follows, page numbers from @page. */
+
+@page {
+  size: Letter;
+  margin: 1in;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Liberation Serif", "Tinos", "Times New Roman", "DejaVu Serif", serif;
+    font-size: 9pt;
+  }
+}
+
+html { font-size: 11pt; }
+
+body {
+  /* Times-metric body; DejaVu supplies any symbol the first fonts lack
+     (∈, →, ≈) and embeds as CID TrueType, so no Type 3 fallback. */
+  font-family: "Liberation Serif", "Tinos", "Times New Roman", "DejaVu Serif", "DejaVu Sans", serif;
+  line-height: 1.35;
+  color: #000;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  text-align: left;
+}
+
+h1 { font-size: 17pt; line-height: 1.25; margin: 0 0 14pt; }
+h2 { font-size: 13pt; margin: 20pt 0 6pt; }
+h3 { font-size: 11.5pt; margin: 16pt 0 6pt; }
+h1, h2, h3 { break-after: avoid; page-break-after: avoid; }
+
+p { margin: 0 0 8pt; orphans: 2; widows: 2; }
+hr { border: 0; border-top: 0.6pt solid #000; margin: 14pt 0; }
+em { font-style: italic; }
+strong { font-weight: bold; }
+
+code {
+  font-family: "Liberation Mono", "DejaVu Sans Mono", monospace;
+  font-size: 88%;
+}
+
+/* Tables ------------------------------------------------------------- */
+table {
+  border-collapse: collapse;
+  margin: 6pt 0 10pt;
+  font-size: 9pt;
+  line-height: 1.25;
+  width: auto;
+  max-width: 100%;
+  break-inside: avoid;          /* keep each table on one page when it fits */
+  page-break-inside: avoid;
+}
+thead { display: table-header-group; }   /* header repeats if a table must split */
+tr, td, th { break-inside: avoid; page-break-inside: avoid; }
+th {
+  font-weight: bold;
+  padding: 2pt 5pt;
+  vertical-align: bottom;
+  border-top: 0.8pt solid #000;
+  border-bottom: 0.5pt solid #000;
+}
+td { padding: 2pt 5pt; vertical-align: top; border: 0; }
+tbody tr:last-child td { border-bottom: 0.8pt solid #000; }
+
+/* Never let any container scroll or clip in print. */
+div, figure, section, article, main { overflow: visible !important; }
+
+/* Keep a lead-in line ("Pooled closed OOS, ...:") with the table it introduces. */
+p:has(+ table) { break-after: avoid; page-break-after: avoid; }
+/* Keep a table heading with its caption and first table. */
+h3 + p { break-after: avoid; page-break-after: avoid; }
